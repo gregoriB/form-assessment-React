@@ -9,6 +9,7 @@ const InputComponent = ({
     type,
     humanLabel
 }) => {
+    // if conditional property is present, check date to see if parental consent checkbox should render
     if (conditional) {
         const showIf = eval(conditional.show_if);
         const inputDate = new Date(formInputState[conditional.name]);
@@ -17,6 +18,7 @@ const InputComponent = ({
         }
     }
 
+    // update state for controlled inputs on change
     const handleChange = e => {
         setFormInputState({
             ...formInputState,
